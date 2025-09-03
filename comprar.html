@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Compra - Lubricentro R/18</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Lubricentro R/18</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="listado_tabla.html">Productos (Tabla)</a></li>
+                    <li><a href="listado_box.html">Productos (Boxes)</a></li>
+                    <li><a href="comprar.html" class="active">Comprar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Formulario de Compra</h2>
+            
+            <form class="purchase-form">
+                <div class="form-section">
+                    <h3>Datos del Cliente</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required pattern="[A-Za-zÀ-ÿ\u00f1\u00d1\s]+" title="Solo se permiten letras y espacios">
+                            <div class="error-message" id="nombre-error" style="display:none; color: #dc3545; font-size: 0.9rem; margin-top: 0.25rem;">Solo se permiten letras y espacios en el nombre</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="direccion">Dirección Completa *</label>
+                            <textarea id="direccion" name="direccion" rows="3" required placeholder="Calle, número, piso, departamento, localidad"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="3765100816" pattern="[0-9]+" title="Solo se permiten números">
+                            <div class="error-message" id="telefono-error" style="display:none; color: #dc3545; font-size: 0.9rem; margin-top: 0.25rem;">Solo se permiten números en el teléfono</div>
+                        </div>
+                        <div class="form-group half">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                            <div class="error-message" id="email-error" style="display:none; color: #dc3545; font-size: 0.9rem; margin-top: 0.25rem;">Por favor ingrese un email válido</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Medio de Pago</h3>
+                    <div class="form-group">
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="medio_pago" value="efectivo" checked>
+                                <span class="radio-custom"></span>
+                                Efectivo
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="medio_pago" value="tarjeta_debito">
+                                <span class="radio-custom"></span>
+                                Tarjeta de Débito
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="medio_pago" value="tarjeta_credito">
+                                <span class="radio-custom"></span>
+                                Tarjeta de Crédito
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="medio_pago" value="transferencia">
+                                <span class="radio-custom"></span>
+                                Transferencia Bancaria
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Selección de Productos</h3>
+                    <div class="products-selection">
+                        <div class="product-item">
+                            <label class="product-checkbox">
+                                <input type="checkbox" name="productos" value="SH001">
+                                <span class="checkbox-custom"></span>
+                                <div class="product-info">
+                                    <span class="product-name">Shell Helix Ultra 5W-30</span>
+                                    <span class="product-price">$8.500</span>
+                                </div>
+                            </label>
+                            <div class="quantity-control">
+                                <label for="qty_SH001">Cantidad:</label>
+                                <input type="number" id="qty_SH001" name="qty_SH001" min="1" max="25" value="1">
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <label class="product-checkbox">
+                                <input type="checkbox" name="productos" value="MO001">
+                                <span class="checkbox-custom"></span>
+                                <div class="product-info">
+                                    <span class="product-name">Mobil 1 0W-20</span>
+                                    <span class="product-price">$9.800</span>
+                                </div>
+                            </label>
+                            <div class="quantity-control">
+                                <label for="qty_MO001">Cantidad:</label>
+                                <input type="number" id="qty_MO001" name="qty_MO001" min="1" max="18" value="1">
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <label class="product-checkbox">
+                                <input type="checkbox" name="productos" value="CA001">
+                                <span class="checkbox-custom"></span>
+                                <div class="product-info">
+                                    <span class="product-name">Castrol GTX 20W-50</span>
+                                    <span class="product-price">$6.200</span>
+                                </div>
+                            </label>
+                            <div class="quantity-control">
+                                <label for="qty_CA001">Cantidad:</label>
+                                <input type="number" id="qty_CA001" name="qty_CA001" min="1" max="30" value="1">
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <label class="product-checkbox">
+                                <input type="checkbox" name="productos" value="MF001">
+                                <span class="checkbox-custom"></span>
+                                <div class="product-info">
+                                    <span class="product-name">Filtro Mann W712/75</span>
+                                    <span class="product-price">$2.200</span>
+                                </div>
+                            </label>
+                            <div class="quantity-control">
+                                <label for="qty_MF001">Cantidad:</label>
+                                <input type="number" id="qty_MF001" name="qty_MF001" min="1" max="45" value="1">
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <label class="product-checkbox">
+                                <input type="checkbox" name="productos" value="BF001">
+                                <span class="checkbox-custom"></span>
+                                <div class="product-info">
+                                    <span class="product-name">Filtro Bosch P3318</span>
+                                    <span class="product-price">$1.950</span>
+                                </div>
+                            </label>
+                            <div class="quantity-control">
+                                <label for="qty_BF001">Cantidad:</label>
+                                <input type="number" id="qty_BF001" name="qty_BF001" min="1" max="38" value="1">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Comentarios Adicionales</h3>
+                    <div class="form-group">
+                        <label for="comentarios">Comentarios o Instrucciones Especiales</label>
+                        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Ingrese cualquier comentario adicional o instrucciones especiales para su pedido"></textarea>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <h3>Resumen del Pedido</h3>
+                    <div id="summary-content">
+                        <p>Seleccione los productos para ver el resumen</p>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-large" onclick="return validateForm()">Confirmar Pedido</button>
+                    <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
+                    <a href="listado_tabla.html" class="btn btn-outline">Seguir Comprando</a>
+                </div>
+            </form>
+
+            <script>
+                function validateForm() {
+                    let isValid = true;
+                    
+                    // Validar nombre
+                    const nombre = document.getElementById('nombre');
+                    const nombrePattern = /^[A-Za-zÀ-ÿ\u00f1\u00d1\s]+$/;
+                    const nombreError = document.getElementById('nombre-error');
+                    
+                    if (!nombrePattern.test(nombre.value)) {
+                        nombreError.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        nombreError.style.display = 'none';
+                    }
+                    
+                    // Validar teléfono
+                    const telefono = document.getElementById('telefono');
+                    const telefonoPattern = /^[0-9]+$/;
+                    const telefonoError = document.getElementById('telefono-error');
+                    
+                    if (!telefonoPattern.test(telefono.value)) {
+                        telefonoError.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        telefonoError.style.display = 'none';
+                    }
+                    
+                    // Validar email
+                    const email = document.getElementById('email');
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const emailError = document.getElementById('email-error');
+                    
+                    if (!emailPattern.test(email.value)) {
+                        emailError.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        emailError.style.display = 'none';
+                    }
+                    
+                    if (!isValid) {
+                        alert('Por favor corrija los errores en el formulario antes de continuar.');
+                    }
+                    
+                    return isValid;
+                }
+                
+                // Validación en tiempo real
+                document.getElementById('telefono').addEventListener('input', function(e) {
+                    const value = e.target.value;
+                    const pattern = /^[0-9]+$/;
+                    const errorDiv = document.getElementById('telefono-error');
+                    
+                    if (value && !pattern.test(value)) {
+                        errorDiv.style.display = 'block';
+                    } else {
+                        errorDiv.style.display = 'none';
+                    }
+                });
+                
+                document.getElementById('nombre').addEventListener('input', function(e) {
+                    const value = e.target.value;
+                    const pattern = /^[A-Za-zÀ-ÿ\u00f1\u00d1\s]+$/;
+                    const errorDiv = document.getElementById('nombre-error');
+                    
+                    if (value && !pattern.test(value)) {
+                        errorDiv.style.display = 'block';
+                    } else {
+                        errorDiv.style.display = 'none';
+                    }
+                });
+                
+                document.getElementById('email').addEventListener('input', function(e) {
+                    const value = e.target.value;
+                    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const errorDiv = document.getElementById('email-error');
+                    
+                    if (value && !pattern.test(value)) {
+                        errorDiv.style.display = 'block';
+                    } else {
+                        errorDiv.style.display = 'none';
+                    }
+                });
+            </script>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lubricentro R/18. Todos los derechos reservados.</p>
+            <p>Dirección: Tambor de Tacuarí 3867, Ciudad Posadas Misiones | Teléfono: 3765100816</p>
+        </div>
+    </footer>
+</body>
+</html>
